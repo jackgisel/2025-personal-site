@@ -1,0 +1,86 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const books = [
+	{
+		title: "Red Rising",
+		author: "Pierce Brown",
+		cover: "/books/red-rising.jpg"
+	},
+	{
+		title: "Golden Son",
+		author: "Pierce Brown",
+		cover: "/books/golden-son.jpg"
+	},
+	{
+		title: "Morning Star",
+		author: "Pierce Brown",
+		cover: "/books/morning-star.jpg"
+	},
+	{
+		title: "Project Hail Mary",
+		author: "Andy Weir",
+		cover: "/books/project-hail-mary.jpg"
+	},
+	{
+		title: "Shoe Dog",
+		author: "Phil Knight",
+		cover: "/books/shoe-dog.jpg"
+	},
+	{
+		title: "Elon Musk",
+		author: "Walter Isaacson",
+		cover: "/books/elon-musk.jpg"
+	}
+];
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title="Bookshelf" description="Books that have shaped my thinking" />
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<div class="mx-auto max-w-5xl px-6 py-12 lg:px-10">
+				<div class="text-center mb-12">
+					<h1 class="text-4xl lg:text-5xl font-display font-normal text-olive-950 dark:text-olive-50 mb-4">
+						Bookshelf
+					</h1>
+					<p class="text-olive-600 dark:text-olive-400 max-w-xl mx-auto">
+						A collection of books that have shaped my thinking, inspired me, or that I simply couldn't put down.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+					{books.map((book) => (
+						<div class="group">
+							<div class="relative aspect-[2/3] overflow-hidden rounded-sm shadow-md group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+								<img
+									src={book.cover}
+									alt={`${book.title} by ${book.author}`}
+									class="w-full h-full object-cover"
+								/>
+								<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+									<h2 class="text-white text-sm font-semibold leading-tight">
+										{book.title}
+									</h2>
+									<p class="text-white/80 text-xs mt-1">
+										{book.author}
+									</p>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Shelf decoration -->
+				<div class="mt-8 h-3 bg-gradient-to-b from-olive-300 to-olive-400 dark:from-olive-700 dark:to-olive-800 rounded-sm shadow-md"></div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,267 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+
+const experiences = [
+	{
+		company: "Apple",
+		logo: "/logos/apple.svg",
+		roles: [
+			{
+				title: "Full Stack Engineer",
+				type: "Full-time",
+				startDate: "Mar 2025",
+				endDate: "Present",
+				location: "San Diego, California",
+				description: null
+			}
+		]
+	},
+	{
+		company: "Ridgeline",
+		logo: "/logos/ridgeline.svg",
+		roles: [
+			{
+				title: "Senior Software Engineer",
+				type: "Full-time",
+				startDate: "Aug 2023",
+				endDate: "Mar 2025",
+				location: "Incline Village, Nevada",
+				description: [
+					"Architected a horizontally scalable real time pricing system that could process billions of price ticks. Built with Redis, AWS ECS and Kotlin",
+					"Implemented a meta programming version of security master in Kotlin, allowing highly unique asset classes",
+					"Built a re-usable service migration tool that provided: user based routing, shadow traffic, data validation and data migration",
+					"Lead a full service rewrite of our key data providing services, researching and providing the architecture for a new technology stack",
+					"Provided guidance around infrastructure and system design around my organization to better the design of microservices"
+				]
+			},
+			{
+				title: "Product Engineer II",
+				type: "Full-time",
+				startDate: "Jan 2022",
+				endDate: "Aug 2023",
+				location: "Incline Village, Nevada",
+				description: [
+					"Worked on the central data service team, focused on ingesting, processing and distributing market data throughout the entire application",
+					"Upgraded Python (3.7 -> 3.11) and Terraform of 11 micro-services",
+					"Lead the devops ownership of my team's 11 micro-services, ranging from Lambda, ECS, Redis, S3, State machines, and ELBs",
+					"Played a key piece in organization by providing design reviews, mentoring newer members and interviewing"
+				],
+				technologies: ["Java", "Python", "Javascript", "React", "Lambda", "Postgres", "DynamoDB", "RDS", "S3", "State Machines", "Terraform"]
+			},
+			{
+				title: "Product Engineer",
+				type: "Full-time",
+				startDate: "Jul 2021",
+				endDate: "Jan 2022",
+				location: "Incline Village, Nevada",
+				description: [
+					"Developed a key feature that was highly requested from users to bring together all their data and aggregate in new ways, which was integrated by many downstream services",
+					"Refactored a key piece of cloud infrastructure, by leveraging IAC in Terraform and AWS constructs to prevent unnecessary compute netting a savings of roughly $20,000/m"
+				],
+				technologies: ["Python", "Javascript", "React", "Lambda", "DynamoDB", "RDS", "S3", "State Machines", "Terraform"]
+			}
+		]
+	},
+	{
+		company: "Brandwise",
+		logo: null,
+		roles: [
+			{
+				title: "Co-Founder",
+				type: "Startup",
+				startDate: "Nov 2022",
+				endDate: "Sep 2023",
+				location: null,
+				description: [
+					"Co-founded MVP of social media management via AI",
+					"Built MVP using: Next.js, Go, GCP, OpenAI"
+				]
+			}
+		]
+	},
+	{
+		company: "Ascend",
+		logo: null,
+		roles: [
+			{
+				title: "Full Stack Engineer",
+				type: "Full-time",
+				startDate: "Oct 2019",
+				endDate: "Mar 2021",
+				location: "San Jose, CA (Remote)",
+				description: [
+					"Built a mobile app focused on consumer debt payoff using React Native, AWS Lambda, Firebase, and ExpressJS",
+					"Developed an algorithm for debt payoff, saving users on average $2,210.98 by using performant data structures",
+					"Constructed actionable screens with data visualization to aid in the understanding of personal finance",
+					"Integrated an application monitoring and session replay system capturing over 90 bugs, helping our team develop quicker and more focused"
+				]
+			}
+		]
+	},
+	{
+		company: "Nexus",
+		logo: null,
+		roles: [
+			{
+				title: "Full Stack Engineer",
+				type: "Contract",
+				startDate: "Apr 2020",
+				endDate: "Feb 2021",
+				location: "Remote",
+				description: [
+					"Created the mobile and web app for a growing social networking company by using NextJS, React, React Native, and TypeScript",
+					"Independently designed and built a highly scalable architecture with an average cost per user of $0.0005/m through NoSQL and serverless functions",
+					"Implemented NFC protocol to efficiently share profile data between users by leveraging Universal Linking",
+					"Rebuilt the Shopify ecommerce landing page boosting load speed 19% by using Bootstrap, SCSS, and vanilla Javascript"
+				]
+			}
+		]
+	}
+];
+
+const education = [
+	{
+		school: "San José State University",
+		degree: "Bachelor of Science - BS, Software Engineering",
+		startDate: "Aug 2017",
+		endDate: "May 2021",
+		extras: "Clubs: Hoplite, Computer Science Club, Software & Computer Engineering Club, Rock Climbing Club"
+	},
+	{
+		school: "freeCodeCamp",
+		degree: "Frontend Web Development Certification",
+		startDate: "2016",
+		endDate: "2018",
+		extras: "Online resource to learn web development and participate in the open source community"
+	}
+];
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title="Work Experience" description="Jack Gisel's professional experience and career history" />
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<div class="mx-auto max-w-4xl px-6 py-12 lg:px-10">
+				<div class="text-center mb-12">
+					<img
+						src="/portrait.jpg"
+						alt="Jack Gisel"
+						class="w-32 h-32 rounded-full object-cover border-4 border-olive-200 dark:border-olive-800 shadow-lg mx-auto mb-6"
+					/>
+					<h1 class="text-4xl lg:text-5xl font-display font-normal text-olive-950 dark:text-olive-50 mb-4">
+						Work Experience
+					</h1>
+					<p class="text-olive-600 dark:text-olive-400 max-w-xl mx-auto">
+						Full stack engineer with a passion for building scalable systems and great user experiences.
+					</p>
+				</div>
+
+				<!-- Timeline -->
+				<div class="relative">
+					<!-- Vertical line -->
+					<div class="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-olive-300 dark:bg-olive-700"></div>
+
+					{experiences.map((exp) => (
+						<div class="relative pl-12 md:pl-20 pb-12 last:pb-0">
+							<!-- Timeline dot -->
+							<div class="absolute left-2 md:left-6 w-5 h-5 bg-olive-500 dark:bg-olive-400 rounded-full border-4 border-olive-100 dark:border-olive-950"></div>
+
+							<!-- Company header -->
+							<div class="mb-4">
+								<h2 class="text-2xl font-display font-normal text-olive-950 dark:text-olive-50">
+									{exp.company}
+								</h2>
+							</div>
+
+							<!-- Roles -->
+							{exp.roles.map((role, roleIndex) => (
+								<div class={`bg-olive-50 dark:bg-olive-900/50 rounded-lg p-5 ${roleIndex > 0 ? 'mt-4' : ''} border border-olive-200 dark:border-olive-800`}>
+									<div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+										<h3 class="text-lg font-semibold text-olive-900 dark:text-olive-100">
+											{role.title}
+										</h3>
+										<span class="text-sm px-2 py-1 bg-olive-200 dark:bg-olive-800 text-olive-700 dark:text-olive-300 rounded">
+											{role.type}
+										</span>
+									</div>
+
+									<div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-olive-600 dark:text-olive-400 mb-3">
+										<span>{role.startDate} - {role.endDate}</span>
+										{role.location && <span>{role.location}</span>}
+									</div>
+
+									{role.description && (
+										<ul class="space-y-2 text-olive-700 dark:text-olive-300">
+											{role.description.map((item) => (
+												<li class="flex gap-2">
+													<span class="text-olive-400 dark:text-olive-600 mt-1.5 flex-shrink-0">•</span>
+													<span>{item}</span>
+												</li>
+											))}
+										</ul>
+									)}
+
+									{role.technologies && (
+										<div class="mt-4 flex flex-wrap gap-2">
+											{role.technologies.map((tech) => (
+												<span class="text-xs px-2 py-1 bg-olive-100 dark:bg-olive-800/50 text-olive-600 dark:text-olive-400 rounded">
+													{tech}
+												</span>
+											))}
+										</div>
+									)}
+								</div>
+							))}
+						</div>
+					))}
+				</div>
+
+				<!-- Education Section -->
+				<div class="mt-16">
+					<h2 class="text-3xl font-display font-normal text-olive-950 dark:text-olive-50 mb-8 text-center">
+						Education
+					</h2>
+
+					<div class="space-y-6">
+						{education.map((edu) => (
+							<div class="bg-olive-50 dark:bg-olive-900/50 rounded-lg p-5 border border-olive-200 dark:border-olive-800">
+								<h3 class="text-lg font-semibold text-olive-900 dark:text-olive-100 mb-1">
+									{edu.school}
+								</h3>
+								<p class="text-olive-700 dark:text-olive-300 mb-2">
+									{edu.degree}
+								</p>
+								<p class="text-sm text-olive-600 dark:text-olive-400 mb-2">
+									{edu.startDate} - {edu.endDate}
+								</p>
+								{edu.extras && (
+									<p class="text-sm text-olive-500 dark:text-olive-500 italic">
+										{edu.extras}
+									</p>
+								)}
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Social Links -->
+				<div class="mt-16 text-center">
+					<h2 class="text-2xl font-display font-normal text-olive-950 dark:text-olive-50 mb-4">
+						Get in Touch
+					</h2>
+					<div class="flex justify-center">
+						<SocialLinks />
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,30 @@
+{
+	"name": "jg-site",
+	"description": "Jack Gisel's personal website and blog.",
+	"dependencies": {
+		"@astrojs/cloudflare": "12.6.12",
+		"@astrojs/mdx": "4.3.12",
+		"@astrojs/rss": "4.0.14",
+		"@astrojs/sitemap": "3.6.0",
+		"astro": "5.16.2",
+		"clsx": "^2.1.1",
+		"typescript": "5.9.3"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.1.18",
+		"tailwindcss": "^4.0.0-beta.2",
+		"wrangler": "4.56.0"
+	},
+	"private": true,
+	"scripts": {
+		"astro": "astro",
+		"build": "astro build",
+		"cf-typegen": "wrangler types",
+		"check": "astro build && tsc && wrangler deploy --dry-run",
+		"deploy": "wrangler deploy",
+		"dev": "astro dev",
+		"new-post": "node scripts/new-blog-post.mjs",
+		"preview": "astro build && wrangler dev"
+	},
+	"type": "module"
+}

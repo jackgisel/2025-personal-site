@@ -1,0 +1,210 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Instrument Serif', serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-olive-50: oklch(98.8% 0.003 106.5);
+  --color-olive-100: oklch(96.6% 0.005 106.5);
+  --color-olive-200: oklch(93% 0.007 106.5);
+  --color-olive-300: oklch(88% 0.011 106.6);
+  --color-olive-400: oklch(73.7% 0.021 106.9);
+  --color-olive-500: oklch(58% 0.031 107.3);
+  --color-olive-600: oklch(46.6% 0.025 107.3);
+  --color-olive-700: oklch(39.4% 0.023 107.4);
+  --color-olive-800: oklch(28.6% 0.016 107.4);
+  --color-olive-900: oklch(22.8% 0.013 107.4);
+  --color-olive-950: oklch(15.3% 0.006 107.1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-olive-100);
+    --scroll-padding-top: 0;
+    scroll-padding-top: var(--scroll-padding-top);
+
+    @variant dark {
+      background-color: var(--color-olive-950);
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    color: var(--color-olive-900);
+    font-size: 1rem;
+    line-height: 1.6;
+
+    @variant dark {
+      color: var(--color-olive-100);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--color-olive-950);
+
+    @variant dark {
+      color: var(--color-olive-50);
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  h3 {
+    font-size: 1.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.625rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: var(--color-olive-700);
+    text-decoration: underline;
+    text-decoration-color: var(--color-olive-300);
+    text-underline-offset: 2px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
+    @variant dark {
+      color: var(--color-olive-300);
+      text-decoration-color: var(--color-olive-700);
+    }
+
+    &:hover {
+      color: var(--color-olive-900);
+      text-decoration-color: var(--color-olive-500);
+
+      @variant dark {
+        color: var(--color-olive-100);
+        text-decoration-color: var(--color-olive-500);
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.875em;
+    padding: 0.125rem 0.375rem;
+    background-color: var(--color-olive-200);
+    border-radius: 0.25rem;
+
+    @variant dark {
+      background-color: var(--color-olive-900);
+    }
+  }
+
+  pre {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-olive-200);
+    overflow-x: auto;
+    margin: 1.5rem 0;
+
+    @variant dark {
+      background-color: var(--color-olive-900);
+    }
+
+    code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid var(--color-olive-400);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--color-olive-700);
+
+    @variant dark {
+      border-left-color: var(--color-olive-600);
+      color: var(--color-olive-300);
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-olive-300);
+    margin: 2rem 0;
+
+    @variant dark {
+      border-top-color: var(--color-olive-700);
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-olive-300);
+
+    @variant dark {
+      border-bottom-color: var(--color-olive-700);
+    }
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--color-olive-950);
+
+    @variant dark {
+      color: var(--color-olive-50);
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}

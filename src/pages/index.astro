@@ -1,0 +1,47 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto max-w-4xl px-6 py-16 lg:px-10 lg:py-24">
+			<div class="text-center">
+				<div class="mb-8 flex justify-center">
+					<img
+						src="/portrait.jpg"
+						alt="Jack Gisel"
+						class="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-olive-200 dark:border-olive-800 shadow-lg"
+					/>
+				</div>
+				<h1 class="text-5xl lg:text-6xl font-display font-normal text-olive-950 dark:text-olive-50 mb-6">
+					Hi, I'm Jack
+				</h1>
+				<div class="max-w-2xl mx-auto space-y-4 text-lg text-olive-700 dark:text-olive-300">
+					<p>
+						I'm a software engineer who loves building things and sharing what I learn along the way.
+					</p>
+					<p>
+						I currently work at <strong>Apple</strong>. Before that, I had the opportunity to work at <strong>Ridgeline</strong> and <strong>Ascend</strong>, where I focused on building robust systems and solving complex engineering problems.
+					</p>
+					<p>
+						I'm passionate about full-stack development, with experience across frontend and backend technologies. I enjoy working on problems that require thoughtful architecture and clean, maintainable code.
+					</p>
+					<p>
+						This is my corner of the internet where I write about software, technology, and ideas that interest me.
+					</p>
+				</div>
+				<SocialLinks />
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
