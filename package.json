@@ -8,6 +8,7 @@
 		"@astrojs/sitemap": "3.6.0",
 		"astro": "5.16.2",
 		"clsx": "^2.1.1",
+		"openai": "^6.17.0",
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
